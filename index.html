@@ -1,1 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Was & Were Adventure - Belajar Bahasa Inggris Kelas 6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-light: #818CF8;
+      --secondary: #F59E0B;
+      --success: #10B981;
+      --danger: #EF4444;
+      --bg: #EEF2FF;
+      --card: #FFFFFF;
+      --text: #1E1B4B;
+      --soft: #C7D2FE;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 50%, #C7D2FE 100%);
+      min-height: 100vh;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* Floating decorations */
+    .bg-deco {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.15;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .deco1 { width: 200px; height: 200px; background: #818CF8; top: -50px; left: -50px; }
+    .deco2 { width: 150px; height: 150px; background: #F59E0B; bottom: 100px; right: -30px; }
+    .deco3 { width: 100px; height: 100px; background: #10B981; top: 40%; left: 5%; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 25px 15px 15px;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .logo {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #4F46E5, #7C3AED, #EC4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: #6366F1;
+      font-weight: 600;
+    }
+
+    .mascot {
+      font-size: 3.5rem;
+      margin: 10px 0;
+      animation: bounce 2s infinite;
+    }
+
+    /* Navigation */
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 25px;
+    }
+
+    .nav-btn {
+      background: white;
+      border: 3px solid var(--soft);
+      border-radius: 50px;
+      padding: 10px 18px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 0 var(--soft);
+    }
+
+    .nav-btn:hover, .nav-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 0 #3730A3;
+      transform: translateY(-2px);
+    }
+
+    /* Screens */
+    .screen {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
+      margin-bottom: 20px;
+      border: 3px solid #E0E7FF;
+    }
+
+    .card h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card p, .card li {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    /* Rule boxes */
+    .rule-box {
+      background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+      border-radius: 18px;
+      padding: 18px;
+      margin: 15px 0;
+      border-left: 6px solid var(--primary);
+    }
+
+    .rule-box.was {
+      border-left-color: #EC4899;
+      background: linear-gradient(135deg, #FDF2F8, #FCE7F3);
+    }
+
+    .rule-box.were {
+      border-left-color: #10B981;
+      background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
+    }
+
+    .subject-tag {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin: 2px;
+    }
+
+    .subject-tag.pink { background: #EC4899; }
+    .subject-tag.green { background: #10B981; }
+
+    .example {
+      background: #FFFBEB;
+      border: 2px dashed #F59E0B;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 10px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .example .id {
+      display: block;
+      font-size: 0.9rem;
+      color: #92400E;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 28px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 5px 0 #3730A3;
+      margin: 6px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 0 #3730A3;
+    }
+
+    .btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #3730A3;
+    }
+
+    .btn.secondary {
+      background: var(--secondary);
+      box-shadow: 0 5px 0 #B45309;
+    }
+    .btn.secondary:hover { box-shadow: 0 8px 0 #B45309; }
+
+    .btn.success {
+      background: var(--success);
+      box-shadow: 0 5px 0 #047857;
+    }
+
+    .btn.danger {
+      background: var(--danger);
+      box-shadow: 0 5px 0 #B91C1C;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    /* Quiz & Game styles */
+    .question-card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      border: 3px solid #C7D2FE;
+      margin-bottom: 20px;
+    }
+
+    .question-text {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 15px 0 25px;
+      line-height: 1.5;
+      color: #312E81;
+    }
+
+    .blank {
+      display: inline-block;
+      min-width: 90px;
+      border-bottom: 3px solid var(--primary);
+      margin: 0 6px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .option-btn {
+      background: #F8FAFC;
+      border: 3px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 16px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: 'Fredoka', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #334155;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background: #EEF2FF;
+      transform: scale(1.03);
+    }
+
+    .option-btn.correct {
+      background: #D1FAE5;
+      border-color: #10B981;
+      color: #065F46;
+      animation: pop 0.3s;
+    }
+
+    .option-btn.wrong {
+      background: #FEE2E2;
+      border-color: #EF4444;
+      color: #991B1B;
+      animation: shake 0.4s;
+    }
+
+    .option-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.85;
+    }
+
+    /* Score & Progress */
+    .score-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #4F46E5, #7C3AED);
+      color: white;
+      border-radius: 50px;
+      padding: 12px 22px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .progress-track {
+      height: 12px;
+      background: #E0E7FF;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 15px 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10B981, #34D399);
+      border-radius: 10px;
+      transition: width 0.4s ease;
+    }
+
+    /* Feedback */
+    .feedback {
+      text-align: center;
+      padding: 18px;
+      border-radius: 16px;
+      margin: 15px 0;
+      font-weight: 700;
+      font-size: 1.15rem;
+      display: none;
+    }
+
+    .feedback.show {
+      display: block;
+      animation: pop 0.35s;
+    }
+
+    .feedback.correct {
+      background: #D1FAE5;
+      color: #065F46;
+      border: 3px solid #10B981;
+    }
+
+    .feedback.wrong {
+      background: #FEE2E2;
+      color: #991B1B;
+      border: 3px solid #EF4444;
+    }
+
+    /* Game specific */
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .match-card {
+      background: white;
+      border: 3px solid #C7D2FE;
+      border-radius: 16px;
+      padding: 18px 12px;
+      text-align: center;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .match-card:hover {
+      border-color: var(--primary);
+      transform: scale(1.04);
+    }
+
+    .match-card.selected {
+      background: #EEF2FF;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px #A5B4FC;
+    }
+
+    .match-card.matched {
+      background: #D1FAE5;
+      border-color: #10B981;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* Character speech */
+    .speech {
+      background: white;
+      border-radius: 20px;
+      padding: 16px 20px;
+      position: relative;
+      margin: 15px 0;
+      border: 3px solid #C7D2FE;
+      font-size: 1.1rem;
+    }
+
+    .speech::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 40px;
+      border-width: 15px 12px 0;
+      border-style: solid;
+      border-color: white transparent transparent;
+    }
+
+    /* Result screen */
+    .result-box {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .result-emoji {
+      font-size: 5rem;
+      margin-bottom: 10px;
+      animation: bounce 1.5s infinite;
+    }
+
+    .stars {
+      font-size: 2.2rem;
+      letter-spacing: 8px;
+      margin: 15px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .logo { font-size: 1.7rem; }
+      .options { grid-template-columns: 1fr; }
+      .nav-btn { padding: 8px 14px; font-size: 0.85rem; }
+      .question-text { font-size: 1.15rem; }
+      .card { padding: 20px 16px; }
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -10px;
+      z-index: 999;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-deco deco1"></div>
+  <div class="bg-deco deco2"></div>
+  <div class="bg-deco deco3"></div>
+
+  <div class="container">
+    <header>
+      <div class="mascot">🦉</div>
+      <div class="logo">Was & Were Adventure</div>
+      <div class="subtitle">Belajar Bahasa Inggris Kelas 6 • Semester Ganjil</div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-tabs">
+      <button class="nav-btn active" onclick="showScreen('home')">🏠 Beranda</button>
+      <button class="nav-btn" onclick="showScreen('learn')">📚 Belajar</button>
+      <button class="nav-btn" onclick="showScreen('practice')">✏️ Latihan</button>
+      <button class="nav-btn" onclick="showScreen('game')">🎮 Game</button>
+      <button class="nav-btn" onclick="showScreen('quiz')">🏆 Kuis</button>
+    </nav>
+
+    <!-- ========== HOME ========== -->
+    <div id="home" class="screen active">
+      <div class="card">
+        <h2>👋 Halo, Petualang Bahasa Inggris!</h2>
+        <div class="speech">
+          Aku Owl, teman belajarmu! Yuk kita pelajari cara memakai <strong>was</strong> dan <strong>were</strong> untuk menceritakan kegiatan dan perasaan di masa lampau.
+        </div>
+        <p style="margin-top:20px;">Di aplikasi ini kamu akan:</p>
+        <ul style="margin:12px 0 20px 20px; line-height:1.8;">
+          <li>📖 Memahami aturan <strong>was</strong> dan <strong>were</strong></li>
+          <li>✏️ Latihan soal interaktif</li>
+          <li>🎮 Bermain game seru</li>
+          <li>🏆 Menantang diri di kuis berbintang</li>
+        </ul>
+        <div class="btn-group">
+          <button class="btn" onclick="showScreen('learn')">Mulai Belajar 🚀</button>
+          <button class="btn secondary" onclick="showScreen('game')">Main Game Dulu 🎮</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🎯 Materi Hari Ini</h2>
+        <p><strong>Unit:</strong> I was in Bali last week & How did Cici feel yesterday?</p>
+        <p>Kamu akan belajar menggunakan <strong>was</strong> dan <strong>were</strong> untuk:</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;">
+          <span class="subject-tag">📍 Tempat (Places)</span>
+          <span class="subject-tag pink">😊 Perasaan (Feelings)</span>
+          <span class="subject-tag green">📅 Aktivitas Lampau</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== LEARN ========== -->
+    <div id="learn" class="screen">
+      <div class="card">
+        <h2>📘 Aturan Was & Were</h2>
+        <p>Was dan Were adalah bentuk lampau dari kata kerja <strong>to be</strong> (am, is, are).</p>
+
+        <div class="rule-box was">
+          <h3 style="color:#BE185D; margin-bottom:8px;">💖 WAS dipakai untuk:</h3>
+          <p>
+            <span class="subject-tag pink">I</span>
+            <span class="subject-tag pink">He</span>
+            <span class="subject-tag pink">She</span>
+            <span class="subject-tag pink">It</span>
+          </p>
+          <div class="example">
+            I <strong>was</strong> happy yesterday.
+            <span class="id">Saya senang kemarin.</span>
+          </div>
+          <div class="example">
+            She <strong>was</strong> in Bali last week.
+            <span class="id">Dia (perempuan) berada di Bali minggu lalu.</span>
+          </div>
+        </div>
+
+        <div class="rule-box were">
+          <h3 style="color:#047857; margin-bottom:8px;">💚 WERE dipakai untuk:</h3>
+          <p>
+            <span class="subject-tag green">You</span>
+            <span class="subject-tag green">We</span>
+            <span class="subject-tag green">They</span>
+          </p>
+          <div class="example">
+            You <strong>were</strong> at the park yesterday.
+            <span class="id">Kamu berada di taman kemarin.</span>
+          </div>
+          <div class="example">
+            They <strong>were</strong> tired after school.
+            <span class="id">Mereka lelah setelah sekolah.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>📍 Was/Were + Tempat</h2>
+        <p>Kita bisa menceritakan di mana kita berada di masa lalu.</p>
+        <div class="example">I <strong>was</strong> at home last night. <span class="id">Saya di rumah tadi malam.</span></div>
+        <div class="example">We <strong>were</strong> in the library yesterday. <span class="id">Kami di perpustakaan kemarin.</span></div>
+        <div class="example">He <strong>was</strong> at the beach last Sunday. <span class="id">Dia di pantai hari Minggu lalu.</span></div>
+      </div>
+
+      <div class="card">
+        <h2>😊 Was/Were + Perasaan</h2>
+        <p>Kita juga bisa menceritakan perasaan di masa lalu.</p>
+        <div class="example">I <strong>was</strong> hungry this morning. <span class="id">Saya lapar pagi ini.</span></div>
+        <div class="example">She <strong>was</strong> sleepy in class. <span class="id">Dia mengantuk di kelas.</span></div>
+        <div class="example">They <strong>were</strong> excited about the trip. <span class="id">Mereka bersemangat tentang perjalanan.</span></div>
+      </div>
+
+      <div class="card">
+        <h2>❓ Bentuk Tanya & Negatif</h2>
+        <div class="example">
+          <strong>Was</strong> she happy yesterday?<br>
+          Yes, she was. / No, she wasn't.
+          <span class="id">Apakah dia senang kemarin?</span>
+        </div>
+        <div class="example">
+          <strong>Were</strong> you at school last Monday?<br>
+          Yes, I was. / No, I wasn't.
+          <span class="id">Apakah kamu di sekolah Senin lalu?</span>
+        </div>
+        <div class="example">
+          They <strong>weren't</strong> tired.<br>
+          He <strong>wasn't</strong> at home.
+          <span class="id">Mereka tidak lelah. / Dia tidak di rumah.</span>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn" onclick="showScreen('practice')">Latihan Sekarang ✏️</button>
+      </div>
+    </div>
+
+    <!-- ========== PRACTICE ========== -->
+    <div id="practice" class="screen">
+      <div class="score-bar">
+        <span>⭐ Skor: <span id="practiceScore">0</span></span>
+        <span>Soal <span id="practiceNum">1</span> / 8</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="practiceProgress" style="width:12.5%"></div>
+      </div>
+
+      <div class="question-card" id="practiceQuestion">
+        <!-- filled by JS -->
+      </div>
+
+      <div class="feedback" id="practiceFeedback"></div>
+
+      <div class="btn-group" id="practiceNext" style="display:none;">
+        <button class="btn" onclick="nextPractice()">Soal Berikutnya ➡️</button>
+      </div>
+    </div>
+
+    <!-- ========== GAME ========== -->
+    <div id="game" class="screen">
+      <div class="card">
+        <h2>🎮 Pilih Game Seru!</h2>
+        <p>Pilih salah satu game di bawah ini. Semakin banyak yang benar, semakin tinggi skornya!</p>
+
+        <div class="btn-group" style="flex-direction:column; align-items:stretch;">
+          <button class="btn" onclick="startGame('match')" style="justify-content:flex-start; padding-left:24px;">
+            🃏 Game 1: Pasangkan Subject & Was/Were
+          </button>
+          <button class="btn secondary" onclick="startGame('fill')" style="justify-content:flex-start; padding-left:24px;">
+            ✏️ Game 2: Isi Titik-Titik (Fill in the Blank)
+          </button>
+          <button class="btn success" onclick="startGame('truefalse')" style="justify-content:flex-start; padding-left:24px;">
+            ✅ Game 3: Benar atau Salah?
+          </button>
+        </div>
+      </div>
+
+      <!-- Game area -->
+      <div id="gameArea" style="display:none;">
+        <div class="score-bar">
+          <span>🎯 Skor: <span id="gameScore">0</span></span>
+          <span id="gameInfo">Game</span>
+        </div>
+        <div id="gameContent"></div>
+        <div class="feedback" id="gameFeedback"></div>
+        <div class="btn-group" id="gameControls"></div>
+      </div>
+    </div>
+
+    <!-- ========== QUIZ ========== -->
+    <div id="quiz" class="screen">
+      <div class="card" id="quizStart">
+        <h2>🏆 Kuis Akhir Petualangan</h2>
+        <p>Siap menguji kemampuanmu? Ada <strong>10 soal</strong> tentang was & were.</p>
+        <p>Dapatkan bintang sebanyak mungkin!</p>
+        <ul style="margin:15px 0 20px 20px; line-height:1.8;">
+          <li>⭐⭐⭐⭐⭐ = Hebat sekali!</li>
+          <li>⭐⭐⭐⭐ = Bagus!</li>
+          <li>⭐⭐⭐ = Cukup baik, terus berlatih ya!</li>
+        </ul>
+        <div class="btn-group">
+          <button class="btn" onclick="startQuiz()">Mulai Kuis 🚀</button>
+        </div>
+      </div>
