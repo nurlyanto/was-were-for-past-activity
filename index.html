@@ -18,13 +18,7 @@
       --text: #1E1B4B;
       --soft: #C7D2FE;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Nunito', sans-serif;
       background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 50%, #C7D2FE 100%);
@@ -32,8 +26,6 @@
       color: var(--text);
       overflow-x: hidden;
     }
-
-    /* Floating decorations */
     .bg-deco {
       position: fixed;
       border-radius: 50%;
@@ -44,7 +36,6 @@
     .deco1 { width: 200px; height: 200px; background: #818CF8; top: -50px; left: -50px; }
     .deco2 { width: 150px; height: 150px; background: #F59E0B; bottom: 100px; right: -30px; }
     .deco3 { width: 100px; height: 100px; background: #10B981; top: 40%; left: 5%; }
-
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -52,37 +43,23 @@
       position: relative;
       z-index: 1;
     }
-
-    /* Header */
     header {
       text-align: center;
       padding: 25px 15px 15px;
       animation: fadeIn 0.6s ease;
     }
-
     .logo {
       font-family: 'Fredoka', sans-serif;
       font-size: 2.2rem;
       font-weight: 700;
       background: linear-gradient(90deg, #4F46E5, #7C3AED, #EC4899);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 5px;
     }
-
-    .subtitle {
-      font-size: 1.05rem;
-      color: #6366F1;
-      font-weight: 600;
-    }
-
-    .mascot {
-      font-size: 3.5rem;
-      margin: 10px 0;
-      animation: bounce 2s infinite;
-    }
-
-    /* Navigation */
+    .subtitle { font-size: 1.05rem; color: #6366F1; font-weight: 600; }
+    .mascot { font-size: 3.5rem; margin: 10px 0; animation: bounce 2s infinite; }
     .nav-tabs {
       display: flex;
       justify-content: center;
@@ -90,7 +67,6 @@
       gap: 10px;
       margin: 20px 0 25px;
     }
-
     .nav-btn {
       background: white;
       border: 3px solid var(--soft);
@@ -104,7 +80,6 @@
       transition: all 0.25s ease;
       box-shadow: 0 4px 0 var(--soft);
     }
-
     .nav-btn:hover, .nav-btn.active {
       background: var(--primary);
       color: white;
@@ -112,38 +87,25 @@
       box-shadow: 0 4px 0 #3730A3;
       transform: translateY(-2px);
     }
-
-    /* Screens */
-    .screen {
-      display: none;
-      animation: fadeIn 0.4s ease;
-    }
-    .screen.active {
-      display: block;
-    }
-
+    .screen { display: none; animation: fadeIn 0.4s ease; }
+    .screen.active { display: block; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-12px); }
     }
-
     @keyframes pop {
       0% { transform: scale(0.8); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
-
     @keyframes shake {
       0%, 100% { transform: translateX(0); }
       25% { transform: translateX(-6px); }
       75% { transform: translateX(6px); }
     }
-
-    /* Cards */
     .card {
       background: white;
       border-radius: 24px;
@@ -152,7 +114,6 @@
       margin-bottom: 20px;
       border: 3px solid #E0E7FF;
     }
-
     .card h2 {
       font-family: 'Fredoka', sans-serif;
       font-size: 1.5rem;
@@ -162,14 +123,7 @@
       align-items: center;
       gap: 10px;
     }
-
-    .card p, .card li {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin-bottom: 8px;
-    }
-
-    /* Rule boxes */
+    .card p, .card li { font-size: 1.05rem; line-height: 1.6; margin-bottom: 8px; }
     .rule-box {
       background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
       border-radius: 18px;
@@ -177,17 +131,14 @@
       margin: 15px 0;
       border-left: 6px solid var(--primary);
     }
-
     .rule-box.was {
       border-left-color: #EC4899;
       background: linear-gradient(135deg, #FDF2F8, #FCE7F3);
     }
-
     .rule-box.were {
       border-left-color: #10B981;
       background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
     }
-
     .subject-tag {
       display: inline-block;
       background: var(--primary);
@@ -198,10 +149,8 @@
       font-size: 0.9rem;
       margin: 2px;
     }
-
     .subject-tag.pink { background: #EC4899; }
     .subject-tag.green { background: #10B981; }
-
     .example {
       background: #FFFBEB;
       border: 2px dashed #F59E0B;
@@ -211,7 +160,6 @@
       font-size: 1.1rem;
       font-weight: 600;
     }
-
     .example .id {
       display: block;
       font-size: 0.9rem;
@@ -219,8 +167,6 @@
       font-weight: 500;
       margin-top: 4px;
     }
-
-    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -239,33 +185,12 @@
       box-shadow: 0 5px 0 #3730A3;
       margin: 6px;
     }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 0 #3730A3;
-    }
-
-    .btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 0 #3730A3;
-    }
-
-    .btn.secondary {
-      background: var(--secondary);
-      box-shadow: 0 5px 0 #B45309;
-    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 0 #3730A3; }
+    .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #3730A3; }
+    .btn.secondary { background: var(--secondary); box-shadow: 0 5px 0 #B45309; }
     .btn.secondary:hover { box-shadow: 0 8px 0 #B45309; }
-
-    .btn.success {
-      background: var(--success);
-      box-shadow: 0 5px 0 #047857;
-    }
-
-    .btn.danger {
-      background: var(--danger);
-      box-shadow: 0 5px 0 #B91C1C;
-    }
-
+    .btn.success { background: var(--success); box-shadow: 0 5px 0 #047857; }
+    .btn.danger { background: var(--danger); box-shadow: 0 5px 0 #B91C1C; }
     .btn-group {
       display: flex;
       flex-wrap: wrap;
@@ -273,8 +198,6 @@
       gap: 10px;
       margin-top: 20px;
     }
-
-    /* Quiz & Game styles */
     .question-card {
       background: white;
       border-radius: 20px;
@@ -283,7 +206,6 @@
       border: 3px solid #C7D2FE;
       margin-bottom: 20px;
     }
-
     .question-text {
       font-size: 1.35rem;
       font-weight: 700;
@@ -291,7 +213,6 @@
       line-height: 1.5;
       color: #312E81;
     }
-
     .blank {
       display: inline-block;
       min-width: 90px;
@@ -300,7 +221,6 @@
       color: var(--primary);
       font-weight: 800;
     }
-
     .options {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -308,7 +228,6 @@
       max-width: 420px;
       margin: 0 auto;
     }
-
     .option-btn {
       background: #F8FAFC;
       border: 3px solid #CBD5E1;
@@ -321,33 +240,24 @@
       transition: all 0.2s;
       color: #334155;
     }
-
     .option-btn:hover {
       border-color: var(--primary);
       background: #EEF2FF;
       transform: scale(1.03);
     }
-
     .option-btn.correct {
       background: #D1FAE5;
       border-color: #10B981;
       color: #065F46;
       animation: pop 0.3s;
     }
-
     .option-btn.wrong {
       background: #FEE2E2;
       border-color: #EF4444;
       color: #991B1B;
       animation: shake 0.4s;
     }
-
-    .option-btn:disabled {
-      cursor: not-allowed;
-      opacity: 0.85;
-    }
-
-    /* Score & Progress */
+    .option-btn:disabled { cursor: not-allowed; opacity: 0.85; }
     .score-bar {
       display: flex;
       justify-content: space-between;
@@ -360,7 +270,6 @@
       font-weight: 700;
       font-size: 1.05rem;
     }
-
     .progress-track {
       height: 12px;
       background: #E0E7FF;
@@ -368,15 +277,12 @@
       overflow: hidden;
       margin: 15px 0;
     }
-
     .progress-fill {
       height: 100%;
       background: linear-gradient(90deg, #10B981, #34D399);
       border-radius: 10px;
       transition: width 0.4s ease;
     }
-
-    /* Feedback */
     .feedback {
       text-align: center;
       padding: 18px;
@@ -386,32 +292,23 @@
       font-size: 1.15rem;
       display: none;
     }
-
-    .feedback.show {
-      display: block;
-      animation: pop 0.35s;
-    }
-
+    .feedback.show { display: block; animation: pop 0.35s; }
     .feedback.correct {
       background: #D1FAE5;
       color: #065F46;
       border: 3px solid #10B981;
     }
-
     .feedback.wrong {
       background: #FEE2E2;
       color: #991B1B;
       border: 3px solid #EF4444;
     }
-
-    /* Game specific */
     .game-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 12px;
       margin: 20px 0;
     }
-
     .match-card {
       background: white;
       border: 3px solid #C7D2FE;
@@ -427,26 +324,18 @@
       justify-content: center;
       font-size: 1rem;
     }
-
-    .match-card:hover {
-      border-color: var(--primary);
-      transform: scale(1.04);
-    }
-
+    .match-card:hover { border-color: var(--primary); transform: scale(1.04); }
     .match-card.selected {
       background: #EEF2FF;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px #A5B4FC;
     }
-
     .match-card.matched {
       background: #D1FAE5;
       border-color: #10B981;
       opacity: 0.7;
       pointer-events: none;
     }
-
-    /* Character speech */
     .speech {
       background: white;
       border-radius: 20px;
@@ -456,7 +345,6 @@
       border: 3px solid #C7D2FE;
       font-size: 1.1rem;
     }
-
     .speech::after {
       content: '';
       position: absolute;
@@ -466,26 +354,9 @@
       border-style: solid;
       border-color: white transparent transparent;
     }
-
-    /* Result screen */
-    .result-box {
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .result-emoji {
-      font-size: 5rem;
-      margin-bottom: 10px;
-      animation: bounce 1.5s infinite;
-    }
-
-    .stars {
-      font-size: 2.2rem;
-      letter-spacing: 8px;
-      margin: 15px 0;
-    }
-
-    /* Responsive */
+    .result-box { text-align: center; padding: 30px 20px; }
+    .result-emoji { font-size: 5rem; margin-bottom: 10px; animation: bounce 1.5s infinite; }
+    .stars { font-size: 2.2rem; letter-spacing: 8px; margin: 15px 0; }
     @media (max-width: 600px) {
       .logo { font-size: 1.7rem; }
       .options { grid-template-columns: 1fr; }
@@ -493,17 +364,15 @@
       .question-text { font-size: 1.15rem; }
       .card { padding: 20px 16px; }
     }
-
-    /* Confetti */
     .confetti {
       position: fixed;
       width: 10px;
       height: 10px;
       top: -10px;
       z-index: 999;
+      pointer-events: none;
       animation: fall linear forwards;
     }
-
     @keyframes fall {
       to {
         transform: translateY(100vh) rotate(720deg);
@@ -516,7 +385,6 @@
   <div class="bg-deco deco1"></div>
   <div class="bg-deco deco2"></div>
   <div class="bg-deco deco3"></div>
-
   <div class="container">
     <header>
       <div class="mascot">🦉</div>
@@ -524,16 +392,15 @@
       <div class="subtitle">Belajar Bahasa Inggris Kelas 6 • Semester Ganjil</div>
     </header>
 
-    <!-- Navigation -->
     <nav class="nav-tabs">
-      <button class="nav-btn active" onclick="showScreen('home')">🏠 Beranda</button>
-      <button class="nav-btn" onclick="showScreen('learn')">📚 Belajar</button>
-      <button class="nav-btn" onclick="showScreen('practice')">✏️ Latihan</button>
-      <button class="nav-btn" onclick="showScreen('game')">🎮 Game</button>
-      <button class="nav-btn" onclick="showScreen('quiz')">🏆 Kuis</button>
+      <button type="button" class="nav-btn active" data-screen="home">🏠 Beranda</button>
+      <button type="button" class="nav-btn" data-screen="learn">📚 Belajar</button>
+      <button type="button" class="nav-btn" data-screen="practice">✏️ Latihan</button>
+      <button type="button" class="nav-btn" data-screen="game">🎮 Game</button>
+      <button type="button" class="nav-btn" data-screen="quiz">🏆 Kuis</button>
     </nav>
 
-    <!-- ========== HOME ========== -->
+    <!-- HOME -->
     <div id="home" class="screen active">
       <div class="card">
         <h2>👋 Halo, Petualang Bahasa Inggris!</h2>
@@ -548,11 +415,10 @@
           <li>🏆 Menantang diri di kuis berbintang</li>
         </ul>
         <div class="btn-group">
-          <button class="btn" onclick="showScreen('learn')">Mulai Belajar 🚀</button>
-          <button class="btn secondary" onclick="showScreen('game')">Main Game Dulu 🎮</button>
+          <button type="button" class="btn" data-screen="learn">Mulai Belajar 🚀</button>
+          <button type="button" class="btn secondary" data-screen="game">Main Game Dulu 🎮</button>
         </div>
       </div>
-
       <div class="card">
         <h2>🎯 Materi Hari Ini</h2>
         <p><strong>Unit:</strong> I was in Bali last week & How did Cici feel yesterday?</p>
@@ -565,12 +431,11 @@
       </div>
     </div>
 
-    <!-- ========== LEARN ========== -->
+    <!-- LEARN -->
     <div id="learn" class="screen">
       <div class="card">
         <h2>📘 Aturan Was & Were</h2>
         <p>Was dan Were adalah bentuk lampau dari kata kerja <strong>to be</strong> (am, is, are).</p>
-
         <div class="rule-box was">
           <h3 style="color:#BE185D; margin-bottom:8px;">💖 WAS dipakai untuk:</h3>
           <p>
@@ -588,7 +453,6 @@
             <span class="id">Dia (perempuan) berada di Bali minggu lalu.</span>
           </div>
         </div>
-
         <div class="rule-box were">
           <h3 style="color:#047857; margin-bottom:8px;">💚 WERE dipakai untuk:</h3>
           <p>
@@ -606,7 +470,6 @@
           </div>
         </div>
       </div>
-
       <div class="card">
         <h2>📍 Was/Were + Tempat</h2>
         <p>Kita bisa menceritakan di mana kita berada di masa lalu.</p>
@@ -614,7 +477,6 @@
         <div class="example">We <strong>were</strong> in the library yesterday. <span class="id">Kami di perpustakaan kemarin.</span></div>
         <div class="example">He <strong>was</strong> at the beach last Sunday. <span class="id">Dia di pantai hari Minggu lalu.</span></div>
       </div>
-
       <div class="card">
         <h2>😊 Was/Were + Perasaan</h2>
         <p>Kita juga bisa menceritakan perasaan di masa lalu.</p>
@@ -622,7 +484,6 @@
         <div class="example">She <strong>was</strong> sleepy in class. <span class="id">Dia mengantuk di kelas.</span></div>
         <div class="example">They <strong>were</strong> excited about the trip. <span class="id">Mereka bersemangat tentang perjalanan.</span></div>
       </div>
-
       <div class="card">
         <h2>❓ Bentuk Tanya & Negatif</h2>
         <div class="example">
@@ -641,13 +502,12 @@
           <span class="id">Mereka tidak lelah. / Dia tidak di rumah.</span>
         </div>
       </div>
-
       <div class="btn-group">
-        <button class="btn" onclick="showScreen('practice')">Latihan Sekarang ✏️</button>
+        <button type="button" class="btn" data-screen="practice">Latihan Sekarang ✏️</button>
       </div>
     </div>
 
-    <!-- ========== PRACTICE ========== -->
+    <!-- PRACTICE -->
     <div id="practice" class="screen">
       <div class="score-bar">
         <span>⭐ Skor: <span id="practiceScore">0</span></span>
@@ -656,38 +516,30 @@
       <div class="progress-track">
         <div class="progress-fill" id="practiceProgress" style="width:12.5%"></div>
       </div>
-
-      <div class="question-card" id="practiceQuestion">
-        <!-- filled by JS -->
-      </div>
-
+      <div class="question-card" id="practiceQuestion"></div>
       <div class="feedback" id="practiceFeedback"></div>
-
       <div class="btn-group" id="practiceNext" style="display:none;">
-        <button class="btn" onclick="nextPractice()">Soal Berikutnya ➡️</button>
+        <button type="button" class="btn" id="btnNextPractice">Soal Berikutnya ➡️</button>
       </div>
     </div>
 
-    <!-- ========== GAME ========== -->
+    <!-- GAME -->
     <div id="game" class="screen">
-      <div class="card">
+      <div class="card" id="gameMenu">
         <h2>🎮 Pilih Game Seru!</h2>
         <p>Pilih salah satu game di bawah ini. Semakin banyak yang benar, semakin tinggi skornya!</p>
-
         <div class="btn-group" style="flex-direction:column; align-items:stretch;">
-          <button class="btn" onclick="startGame('match')" style="justify-content:flex-start; padding-left:24px;">
+          <button type="button" class="btn" id="btnGameMatch" style="justify-content:flex-start; padding-left:24px;">
             🃏 Game 1: Pasangkan Subject & Was/Were
           </button>
-          <button class="btn secondary" onclick="startGame('fill')" style="justify-content:flex-start; padding-left:24px;">
+          <button type="button" class="btn secondary" id="btnGameFill" style="justify-content:flex-start; padding-left:24px;">
             ✏️ Game 2: Isi Titik-Titik (Fill in the Blank)
           </button>
-          <button class="btn success" onclick="startGame('truefalse')" style="justify-content:flex-start; padding-left:24px;">
+          <button type="button" class="btn success" id="btnGameTF" style="justify-content:flex-start; padding-left:24px;">
             ✅ Game 3: Benar atau Salah?
           </button>
         </div>
       </div>
-
-      <!-- Game area -->
       <div id="gameArea" style="display:none;">
         <div class="score-bar">
           <span>🎯 Skor: <span id="gameScore">0</span></span>
@@ -699,7 +551,7 @@
       </div>
     </div>
 
-    <!-- ========== QUIZ ========== -->
+    <!-- QUIZ -->
     <div id="quiz" class="screen">
       <div class="card" id="quizStart">
         <h2>🏆 Kuis Akhir Petualangan</h2>
@@ -711,6 +563,510 @@
           <li>⭐⭐⭐ = Cukup baik, terus berlatih ya!</li>
         </ul>
         <div class="btn-group">
-          <button class="btn" onclick="startQuiz()">Mulai Kuis 🚀</button>
+          <button type="button" class="btn" id="btnStartQuiz">Mulai Kuis 🚀</button>
         </div>
       </div>
+      <div id="quizPlay" style="display:none;">
+        <div class="score-bar">
+          <span>⭐ Skor: <span id="quizScore">0</span></span>
+          <span>Soal <span id="quizNum">1</span> / 10</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="quizProgress" style="width:10%"></div>
+        </div>
+        <div class="question-card" id="quizQuestion"></div>
+        <div class="feedback" id="quizFeedback"></div>
+        <div class="btn-group" id="quizNext" style="display:none;">
+          <button type="button" class="btn" id="btnNextQuiz">Soal Berikutnya ➡️</button>
+        </div>
+      </div>
+      <div class="card result-box" id="quizResult" style="display:none;"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // ===== NAVIGATION =====
+      function showScreen(id) {
+        document.querySelectorAll('.screen').forEach(function (s) {
+          s.classList.remove('active');
+        });
+        var el = document.getElementById(id);
+        if (el) el.classList.add('active');
+
+        document.querySelectorAll('.nav-btn').forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-screen') === id);
+        });
+
+        if (id === 'practice') startPractice();
+        if (id === 'game') resetGameMenu();
+        if (id === 'quiz') resetQuizStart();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('[data-screen]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          showScreen(btn.getAttribute('data-screen'));
+        });
+      });
+
+      // ===== DATA =====
+      var practiceQs = [
+        { q: 'I ___ happy yesterday.', options: ['was', 'were'], answer: 'was' },
+        { q: 'They ___ at the park last Sunday.', options: ['was', 'were'], answer: 'were' },
+        { q: 'She ___ in Bali last week.', options: ['was', 'were'], answer: 'was' },
+        { q: 'We ___ tired after school.', options: ['was', 'were'], answer: 'were' },
+        { q: 'He ___ hungry this morning.', options: ['was', 'were'], answer: 'was' },
+        { q: 'You ___ at home last night.', options: ['was', 'were'], answer: 'were' },
+        { q: 'It ___ cold yesterday.', options: ['was', 'were'], answer: 'was' },
+        { q: 'My friends ___ excited about the trip.', options: ['was', 'were'], answer: 'were' }
+      ];
+
+      var quizQs = [
+        { q: 'Cici ___ sleepy in class yesterday.', options: ['was', 'were', "wasn't they", 'are'], answer: 'was' },
+        { q: '___ you at school last Monday?', options: ['Was', 'Were', 'Is', 'Are'], answer: 'Were' },
+        { q: 'He ___ at the beach last Sunday.', options: ['were', 'was', 'are', 'am'], answer: 'was' },
+        { q: 'They ___ tired. (negatif)', options: ["wasn't", "weren't", "isn't", "aren't"], answer: "weren't" },
+        { q: 'I ___ in the library yesterday.', options: ['were', 'was', 'am', 'is'], answer: 'was' },
+        { q: '___ she happy yesterday?', options: ['Were', 'Was', 'Are', 'Do'], answer: 'Was' },
+        { q: 'We ___ at the zoo last week.', options: ['was', 'were', 'is', 'am'], answer: 'were' },
+        { q: 'The weather ___ sunny last Saturday.', options: ['were', 'was', 'are', 'am'], answer: 'was' },
+        { q: 'You and I ___ classmates last year.', options: ['was', 'were', 'is', 'am'], answer: 'were' },
+        { q: 'My brother ___ not at home last night.', options: ["weren't", "wasn't", "aren't", "isn't"], answer: "wasn't" }
+      ];
+
+      var matchPairs = [
+        { subject: 'I', verb: 'was' },
+        { subject: 'He', verb: 'was' },
+        { subject: 'She', verb: 'was' },
+        { subject: 'It', verb: 'was' },
+        { subject: 'You', verb: 'were' },
+        { subject: 'We', verb: 'were' },
+        { subject: 'They', verb: 'were' }
+      ];
+
+      var fillQs = [
+        { q: 'I ___ at home last night.', answer: 'was' },
+        { q: 'They ___ happy yesterday.', answer: 'were' },
+        { q: 'She ___ sleepy in class.', answer: 'was' },
+        { q: 'We ___ in Bali last week.', answer: 'were' },
+        { q: 'You ___ at the park.', answer: 'were' },
+        { q: 'He ___ hungry this morning.', answer: 'was' }
+      ];
+
+      var tfQs = [
+        { s: 'I was happy yesterday.', ok: true },
+        { s: 'They was at school.', ok: false },
+        { s: 'She were in Bali.', ok: false },
+        { s: 'We were tired after school.', ok: true },
+        { s: 'He were at the beach.', ok: false },
+        { s: 'You were at home last night.', ok: true }
+      ];
+
+      // ===== PRACTICE =====
+      var pIndex = 0, pScore = 0, pLock = false;
+
+      function startPractice() {
+        pIndex = 0;
+        pScore = 0;
+        pLock = false;
+        document.getElementById('practiceScore').textContent = '0';
+        document.getElementById('practiceNext').style.display = 'none';
+        renderPractice();
+      }
+
+      function renderPractice() {
+        var item = practiceQs[pIndex];
+        document.getElementById('practiceNum').textContent = String(pIndex + 1);
+        document.getElementById('practiceProgress').style.width = ((pIndex + 1) / practiceQs.length * 100) + '%';
+        var fb = document.getElementById('practiceFeedback');
+        fb.className = 'feedback';
+        fb.textContent = '';
+        document.getElementById('practiceNext').style.display = 'none';
+        pLock = false;
+
+        var html = '<div class="question-text">' + item.q.replace('___', '<span class="blank">____</span>') + '</div>';
+        html += '<div class="options">';
+        item.options.forEach(function (opt) {
+          html += '<button type="button" class="option-btn" data-answer="' + opt + '">' + opt + '</button>';
+        });
+        html += '</div>';
+        document.getElementById('practiceQuestion').innerHTML = html;
+
+        document.querySelectorAll('#practiceQuestion .option-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if (pLock) return;
+            pLock = true;
+            var chosen = btn.getAttribute('data-answer');
+            var correct = item.answer;
+            document.querySelectorAll('#practiceQuestion .option-btn').forEach(function (b) {
+              b.disabled = true;
+              if (b.getAttribute('data-answer') === correct) b.classList.add('correct');
+            });
+            if (chosen === correct) {
+              btn.classList.add('correct');
+              pScore++;
+              document.getElementById('practiceScore').textContent = String(pScore);
+              showFb(fb, true, 'Benar! 🎉 ' + item.q.replace('___', correct));
+            } else {
+              btn.classList.add('wrong');
+              showFb(fb, false, 'Belum tepat. Jawaban: ' + correct);
+            }
+            var nextBtn = document.getElementById('practiceNext');
+            if (pIndex < practiceQs.length - 1) {
+              nextBtn.style.display = 'flex';
+              document.getElementById('btnNextPractice').textContent = 'Soal Berikutnya ➡️';
+            } else {
+              nextBtn.style.display = 'flex';
+              document.getElementById('btnNextPractice').textContent = 'Selesai 🎉';
+            }
+          });
+        });
+      }
+
+      document.getElementById('btnNextPractice').addEventListener('click', function () {
+        if (pIndex < practiceQs.length - 1) {
+          pIndex++;
+          renderPractice();
+        } else {
+          document.getElementById('practiceQuestion').innerHTML =
+            '<div class="result-emoji">🌟</div><div class="question-text">Latihan selesai!<br>Skor: ' + pScore + ' / ' + practiceQs.length + '</div>';
+          document.getElementById('practiceFeedback').className = 'feedback';
+          document.getElementById('practiceNext').style.display = 'none';
+        }
+      });
+
+      // ===== QUIZ =====
+      var qIndex = 0, qScore = 0, qLock = false;
+
+      function resetQuizStart() {
+        document.getElementById('quizStart').style.display = 'block';
+        document.getElementById('quizPlay').style.display = 'none';
+        document.getElementById('quizResult').style.display = 'none';
+      }
+
+      function startQuiz() {
+        qIndex = 0;
+        qScore = 0;
+        qLock = false;
+        document.getElementById('quizScore').textContent = '0';
+        document.getElementById('quizStart').style.display = 'none';
+        document.getElementById('quizResult').style.display = 'none';
+        document.getElementById('quizPlay').style.display = 'block';
+        renderQuiz();
+      }
+
+      function renderQuiz() {
+        var item = quizQs[qIndex];
+        document.getElementById('quizNum').textContent = String(qIndex + 1);
+        document.getElementById('quizProgress').style.width = ((qIndex + 1) / quizQs.length * 100) + '%';
+        var fb = document.getElementById('quizFeedback');
+        fb.className = 'feedback';
+        fb.textContent = '';
+        document.getElementById('quizNext').style.display = 'none';
+        qLock = false;
+
+        var html = '<div class="question-text">' + item.q.replace('___', '<span class="blank">____</span>') + '</div>';
+        html += '<div class="options">';
+        item.options.forEach(function (opt) {
+          html += '<button type="button" class="option-btn" data-answer="' + opt.replace(/"/g, '&quot;') + '">' + opt + '</button>';
+        });
+        html += '</div>';
+        document.getElementById('quizQuestion').innerHTML = html;
+
+        document.querySelectorAll('#quizQuestion .option-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if (qLock) return;
+            qLock = true;
+            var chosen = btn.getAttribute('data-answer');
+            var correct = item.answer;
+            document.querySelectorAll('#quizQuestion .option-btn').forEach(function (b) {
+              b.disabled = true;
+              if (b.getAttribute('data-answer') === correct) b.classList.add('correct');
+            });
+            if (chosen === correct) {
+              btn.classList.add('correct');
+              qScore++;
+              document.getElementById('quizScore').textContent = String(qScore);
+              showFb(fb, true, 'Hebat! 🎉');
+            } else {
+              btn.classList.add('wrong');
+              showFb(fb, false, 'Jawaban benar: ' + correct);
+            }
+            document.getElementById('quizNext').style.display = 'flex';
+            document.getElementById('btnNextQuiz').textContent =
+              qIndex < quizQs.length - 1 ? 'Soal Berikutnya ➡️' : 'Lihat Hasil 🏆';
+          });
+        });
+      }
+
+      document.getElementById('btnStartQuiz').addEventListener('click', startQuiz);
+      document.getElementById('btnNextQuiz').addEventListener('click', function () {
+        if (qIndex < quizQs.length - 1) {
+          qIndex++;
+          renderQuiz();
+        } else {
+          finishQuiz();
+        }
+      });
+
+      function finishQuiz() {
+        document.getElementById('quizPlay').style.display = 'none';
+        var stars = qScore >= 9 ? 5 : qScore >= 7 ? 4 : qScore >= 5 ? 3 : qScore >= 3 ? 2 : 1;
+        var starStr = '⭐'.repeat(stars) + '☆'.repeat(5 - stars);
+        var msg = stars >= 5 ? 'Hebat sekali!' : stars >= 4 ? 'Bagus!' : 'Cukup baik, terus berlatih ya!';
+        var box = document.getElementById('quizResult');
+        box.style.display = 'block';
+        box.innerHTML =
+          '<div class="result-emoji">' + (stars >= 4 ? '🦉🎉' : '🦉') + '</div>' +
+          '<h2>Hasil Kuis</h2>' +
+          '<div class="stars">' + starStr + '</div>' +
+          '<p class="question-text">' + qScore + ' / ' + quizQs.length + '</p>' +
+          '<p>' + msg + '</p>' +
+          '<div class="btn-group">' +
+            '<button type="button" class="btn" id="btnRetryQuiz">Ulangi Kuis</button>' +
+            '<button type="button" class="btn secondary" data-screen="home" id="btnHomeFromQuiz">Beranda</button>' +
+          '</div>';
+        document.getElementById('btnRetryQuiz').addEventListener('click', startQuiz);
+        document.getElementById('btnHomeFromQuiz').addEventListener('click', function () {
+          showScreen('home');
+        });
+        if (stars >= 4) launchConfetti();
+      }
+
+      // ===== GAMES =====
+      function resetGameMenu() {
+        document.getElementById('gameMenu').style.display = 'block';
+        document.getElementById('gameArea').style.display = 'none';
+      }
+
+      function openGameArea(title) {
+        document.getElementById('gameMenu').style.display = 'none';
+        document.getElementById('gameArea').style.display = 'block';
+        document.getElementById('gameScore').textContent = '0';
+        document.getElementById('gameInfo').textContent = title;
+        document.getElementById('gameFeedback').className = 'feedback';
+        document.getElementById('gameFeedback').textContent = '';
+      }
+
+      document.getElementById('btnGameMatch').addEventListener('click', startMatch);
+      document.getElementById('btnGameFill').addEventListener('click', startFill);
+      document.getElementById('btnGameTF').addEventListener('click', startTF);
+
+      // Match game
+      var selectedCard = null, matchScore = 0, matchLeft = 0;
+
+      function startMatch() {
+        openGameArea('Pasangkan Subject');
+        matchScore = 0;
+        selectedCard = null;
+        var cards = [];
+        matchPairs.forEach(function (p, i) {
+          cards.push({ id: 's' + i, text: p.subject, pair: i, kind: 'subject' });
+          cards.push({ id: 'v' + i, text: p.verb, pair: i, kind: 'verb' });
+        });
+        shuffle(cards);
+        matchLeft = matchPairs.length;
+        var grid = '<div class="game-grid">';
+        cards.forEach(function (c) {
+          grid += '<div class="match-card" data-id="' + c.id + '" data-pair="' + c.pair + '" data-kind="' + c.kind + '">' + c.text + '</div>';
+        });
+        grid += '</div>';
+        document.getElementById('gameContent').innerHTML = grid;
+        document.getElementById('gameControls').innerHTML =
+          '<button type="button" class="btn secondary" id="btnBackGame">⬅️ Pilih Game Lain</button>';
+        document.getElementById('btnBackGame').addEventListener('click', resetGameMenu);
+
+        document.querySelectorAll('.match-card').forEach(function (card) {
+          card.addEventListener('click', function () {
+            if (card.classList.contains('matched')) return;
+            if (!selectedCard) {
+              selectedCard = card;
+              card.classList.add('selected');
+              return;
+            }
+            if (selectedCard === card) {
+              card.classList.remove('selected');
+              selectedCard = null;
+              return;
+            }
+            var a = selectedCard, b = card;
+            var samePair = a.getAttribute('data-pair') === b.getAttribute('data-pair');
+            var diffKind = a.getAttribute('data-kind') !== b.getAttribute('data-kind');
+            if (samePair && diffKind) {
+              a.classList.add('matched');
+              b.classList.add('matched');
+              a.classList.remove('selected');
+              matchScore += 10;
+              matchLeft--;
+              document.getElementById('gameScore').textContent = String(matchScore);
+              showFb(document.getElementById('gameFeedback'), true, 'Cocok! 🎉');
+              if (matchLeft === 0) {
+                showFb(document.getElementById('gameFeedback'), true, 'Semua berpasangan! Skor: ' + matchScore);
+                launchConfetti();
+              }
+            } else {
+              a.classList.add('wrong');
+              b.classList.add('wrong');
+              showFb(document.getElementById('gameFeedback'), false, 'Belum cocok, coba lagi!');
+              setTimeout(function () {
+                a.classList.remove('selected', 'wrong');
+                b.classList.remove('wrong');
+              }, 500);
+            }
+            selectedCard = null;
+          });
+        });
+      }
+
+      // Fill game
+      var fIndex = 0, fScore = 0, fLock = false;
+
+      function startFill() {
+        openGameArea('Isi Titik-Titik');
+        fIndex = 0;
+        fScore = 0;
+        fLock = false;
+        renderFill();
+      }
+
+      function renderFill() {
+        var item = fillQs[fIndex];
+        document.getElementById('gameInfo').textContent = 'Isi Titik-Titik ' + (fIndex + 1) + '/' + fillQs.length;
+        var html = '<div class="question-card"><div class="question-text">' +
+          item.q.replace('___', '<span class="blank">____</span>') +
+          '</div><div class="options">' +
+          '<button type="button" class="option-btn" data-answer="was">was</button>' +
+          '<button type="button" class="option-btn" data-answer="were">were</button>' +
+          '</div></div>';
+        document.getElementById('gameContent').innerHTML = html;
+        document.getElementById('gameControls').innerHTML =
+          '<button type="button" class="btn secondary" id="btnBackGame">⬅️ Pilih Game Lain</button>';
+        document.getElementById('btnBackGame').addEventListener('click', resetGameMenu);
+        var fb = document.getElementById('gameFeedback');
+        fb.className = 'feedback';
+        fLock = false;
+
+        document.querySelectorAll('#gameContent .option-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if (fLock) return;
+            fLock = true;
+            var chosen = btn.getAttribute('data-answer');
+            document.querySelectorAll('#gameContent .option-btn').forEach(function (b) {
+              b.disabled = true;
+              if (b.getAttribute('data-answer') === item.answer) b.classList.add('correct');
+            });
+            if (chosen === item.answer) {
+              fScore += 10;
+              document.getElementById('gameScore').textContent = String(fScore);
+              showFb(fb, true, 'Benar! 🎉');
+            } else {
+              btn.classList.add('wrong');
+              showFb(fb, false, 'Jawaban: ' + item.answer);
+            }
+            setTimeout(function () {
+              if (fIndex < fillQs.length - 1) {
+                fIndex++;
+                renderFill();
+              } else {
+                document.getElementById('gameContent').innerHTML =
+                  '<div class="question-card"><div class="result-emoji">✨</div><div class="question-text">Selesai! Skor: ' + fScore + '</div></div>';
+                launchConfetti();
+              }
+            }, 900);
+          });
+        });
+      }
+
+      // True / False
+      var tIndex = 0, tScore = 0, tLock = false;
+
+      function startTF() {
+        openGameArea('Benar atau Salah');
+        tIndex = 0;
+        tScore = 0;
+        tLock = false;
+        renderTF();
+      }
+
+      function renderTF() {
+        var item = tfQs[tIndex];
+        document.getElementById('gameInfo').textContent = 'Benar/Salah ' + (tIndex + 1) + '/' + tfQs.length;
+        var html = '<div class="question-card"><div class="question-text">"' + item.s + '"</div>' +
+          '<div class="options">' +
+          '<button type="button" class="option-btn" data-ok="true">✅ Benar</button>' +
+          '<button type="button" class="option-btn" data-ok="false">❌ Salah</button>' +
+          '</div></div>';
+        document.getElementById('gameContent').innerHTML = html;
+        document.getElementById('gameControls').innerHTML =
+          '<button type="button" class="btn secondary" id="btnBackGame">⬅️ Pilih Game Lain</button>';
+        document.getElementById('btnBackGame').addEventListener('click', resetGameMenu);
+        var fb = document.getElementById('gameFeedback');
+        fb.className = 'feedback';
+        tLock = false;
+
+        document.querySelectorAll('#gameContent .option-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if (tLock) return;
+            tLock = true;
+            var chosen = btn.getAttribute('data-ok') === 'true';
+            document.querySelectorAll('#gameContent .option-btn').forEach(function (b) { b.disabled = true; });
+            if (chosen === item.ok) {
+              btn.classList.add('correct');
+              tScore += 10;
+              document.getElementById('gameScore').textContent = String(tScore);
+              showFb(fb, true, 'Tepat! 🎉');
+            } else {
+              btn.classList.add('wrong');
+              showFb(fb, false, item.ok ? 'Kalimat itu BENAR.' : 'Kalimat itu SALAH.');
+            }
+            setTimeout(function () {
+              if (tIndex < tfQs.length - 1) {
+                tIndex++;
+                renderTF();
+              } else {
+                document.getElementById('gameContent').innerHTML =
+                  '<div class="question-card"><div class="result-emoji">🏅</div><div class="question-text">Selesai! Skor: ' + tScore + '</div></div>';
+                launchConfetti();
+              }
+            }, 900);
+          });
+        });
+      }
+
+      // ===== HELPERS =====
+      function showFb(el, ok, text) {
+        el.className = 'feedback show ' + (ok ? 'correct' : 'wrong');
+        el.textContent = text;
+      }
+
+      function shuffle(arr) {
+        for (var i = arr.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var t = arr[i];
+          arr[i] = arr[j];
+          arr[j] = t;
+        }
+        return arr;
+      }
+
+      function launchConfetti() {
+        var colors = ['#4F46E5', '#F59E0B', '#10B981', '#EC4899', '#818CF8'];
+        for (var i = 0; i < 40; i++) {
+          var d = document.createElement('div');
+          d.className = 'confetti';
+          d.style.left = Math.random() * 100 + 'vw';
+          d.style.background = colors[i % colors.length];
+          d.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+          d.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+          document.body.appendChild(d);
+          setTimeout(function (el) { el.remove(); }, 3500, d);
+        }
+      }
+
+      // expose for safety if any leftover inline calls exist
+      window.showScreen = showScreen;
+    })();
+  </script>
+</body>
+</html>
